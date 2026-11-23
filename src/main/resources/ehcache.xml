@@ -1,0 +1,12 @@
+<config xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns='http://www.ehcache.org/v3' xmlns:jsr107='http://www.ehcache.org/v3/jsr107'>
+
+    <service>
+        <jsr107:defaults default-template="customDefault"/>
+    </service>
+
+    <cache-template name="customDefault">
+        <resources>
+            <heap unit="entries">100</heap>
+        </resources>
+    </cache-template>
+</config>
