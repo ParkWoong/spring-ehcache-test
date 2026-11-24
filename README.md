@@ -36,6 +36,10 @@ mvn spring-boot:run
 
 The app listens on localhost:8080. The test checks startup and entity access; it does not measure cache hit rates.
 
+#### Postman API
+
+Call GET http://localhost:8080/cache/evict?cacheName=missing&key=sample with no body. Expected: HTTP 200, false because the named cache does not exist. The existing route returns true only when it removes a matching entry.
+
 ## KR
 
 ### 프로젝트 구조
@@ -69,3 +73,7 @@ mvn spring-boot:run
 ```
 
 앱은 localhost:8080에서 실행됩니다. 테스트는 시작과 엔티티 접근을 확인하며 캐시 적중률은 측정하지 않습니다.
+
+#### Postman API
+
+본문 없이 GET http://localhost:8080/cache/evict?cacheName=missing&key=sample을 호출하세요. 예상 결과: 지정한 캐시가 없어 HTTP 200, false입니다. 기존 라우트가 일치하는 항목을 제거할 때만 true를 반환합니다.
